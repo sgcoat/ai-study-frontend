@@ -25,6 +25,11 @@
     "android": {
       "package": "com.sgcoat.aistudy",
       "versionCode": 1
+    },
+    "extra": {
+      "eas": {
+        "projectId": "c86eab15-d82d-4b8e-994b-c0768126fe08"
+      }
     }
   }
 }

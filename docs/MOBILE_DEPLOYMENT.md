@@ -8,6 +8,7 @@
 | --- | --- |
 | Expo 계정 | `sugarcoat1021` (CLI 로그인에서 확인) |
 | Expo slug | `ai-study-app` |
+| EAS project ID | `c86eab15-d82d-4b8e-994b-c0768126fe08` |
 | 앱 버전 | `1.0.0` |
 | iOS bundle identifier | `com.sgcoat.aistudy` |
 | Android package | `com.sgcoat.aistudy` |
@@ -39,13 +40,17 @@ pnpm mobile:prepare --profile preview-ios-simulator --platform ios
 
 설정 보고서는 `outputs/mobile-<프로필>-<플랫폼>.json`에 저장됩니다. 빌드 실행 전 누락 설정을 오류로 처리하려면 `--strict`를 추가합니다. 이 명령은 빌드·서명·스토어 업로드·메일 발송을 하지 않습니다. 개인정보 처리방침 초안 게시나 법률 검토는 이번 범위에 포함하지 않았습니다.
 
+## EAS 프로젝트 연결 완료
+
+기존 Expo 로그인으로 [@sugarcoat1021/ai-study-app](https://expo.dev/accounts/sugarcoat1021/projects/ai-study-app)을 만들고 `app.json`의 `extra.eas.projectId`에 실제 UUID를 저장했습니다. 네이티브 빌드·서명·스토어 제출은 실행하지 않았습니다. preview의 iOS·Android·Simulator 설정 보고서는 누락 없이 통과했고, production은 공개 개인정보 처리방침 URL이 남아 있습니다.
+
 ## 이후 실제 빌드를 할 때
 
-1. Expo 계정으로 로그인한 상태에서 EAS 프로젝트를 생성하거나 기존 프로젝트에 연결합니다.
+1. Expo 계정을 확인합니다. 이 소스는 이미 EAS 프로젝트에 연결되어 있으므로 새 프로젝트를 만들 필요가 없습니다. 다른 작업 폴더를 연결해야 할 때만 기존 UUID를 사용합니다.
 
 ```sh
 pnpm dlx eas-cli login
-pnpm dlx eas-cli init
+pnpm dlx eas-cli init --id c86eab15-d82d-4b8e-994b-c0768126fe08
 ```
 
 생성된 `extra.eas.projectId`가 `app.json`에 저장됐는지 확인합니다. 이 값은 공개 프로젝트 UUID입니다. 이미 만든 프로젝트가 있다면 새 프로젝트를 중복 생성하지 않고 해당 ID로 연결합니다.
@@ -73,7 +78,7 @@ production 빌드에는 실제 공개 개인정보 처리방침을 게시하고 
 ## 배포 전 확인이 남은 부분
 
 - 배포된 API를 사용하는 iPhone의 이메일 로그인, 재실행 로그인 복원, 사진 포함 자료 생성·조회·수정·삭제.
-- EAS 프로젝트 연결과 플랫폼별 네이티브 컴파일·서명.
+- 플랫폼별 네이티브 컴파일·서명.
 - iPhone 앱 아이콘·스토어 스크린샷·개인정보 처리방침·심사 정보.
 - 클라우드 API의 기존 로컬 자료·사진 이전 여부 결정.
 

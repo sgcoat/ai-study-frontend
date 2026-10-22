@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native';
 
 import { AppScreen } from '../components/AppScreen';
+import { MainTabIcon } from './MainTabIcon';
 
 export function RecordsTabScreen() {
   return (
@@ -27,7 +28,7 @@ function PlaceholderScreen({
         <Text style={styles.eyebrow}>{eyebrow}</Text>
         <Text style={styles.title}>{title}</Text>
         <View style={styles.placeholderCard}>
-          <Text style={styles.placeholderMark}>✦</Text>
+          <MainTabIcon name="Records" color="#5B5FEF" size={28} />
           <Text style={styles.description}>{description}</Text>
         </View>
       </View>
@@ -61,10 +62,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     padding: 24,
     marginTop: 12,
-  },
-  placeholderMark: {
-    color: '#5B5FEF',
-    fontSize: 28,
   },
   description: {
     color: '#697488',

@@ -14,7 +14,7 @@ const files = ['App.tsx', 'index.ts', 'app.json', 'app.config.js', 'eas.json', '
   'pnpm-lock.yaml', '.env.example', '.gitignore', '.easignore',
   'scripts/prepare-mobile.mjs', 'scripts/export-frontend.mjs',
   'supabase/projects.json', 'supabase/scripts/connect-app.mjs', 'supabase/scripts/start-app.mjs',
-  'docs/MOBILE_DEPLOYMENT.md', 'docs/FRONTEND_README.md'];
+  'docs/MOBILE_DEPLOYMENT.md', 'docs/FRONTEND_README.md', 'docs/ANDROID_TAB_BAR_FIX.md'];
 async function collect(directory) {
   for (const entry of await readdir(resolve(root, directory), { withFileTypes: true })) {
     const name = join(directory, entry.name);

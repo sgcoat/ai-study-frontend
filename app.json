@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "AI 학습 요약",
+    "slug": "ai-study-app",
+    "owner": "sugarcoat1021",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "plugins": [
+      "expo-secure-store",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "학습 필기 이미지를 선택하기 위해 사진 보관함 접근을 허용합니다.",
+          "cameraPermission": "학습 필기를 촬영하기 위해 카메라 접근을 허용합니다.",
+          "microphonePermission": false
+        }
+      ]
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.sgcoat.aistudy",
+      "buildNumber": "1"
+    },
+    "android": {
+      "package": "com.sgcoat.aistudy",
+      "versionCode": 1
+    }
+  }
+}

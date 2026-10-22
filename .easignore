@@ -1,0 +1,17 @@
+node_modules/
+.expo/
+dist/
+web-build/
+coverage/
+work/
+outputs/
+docs/
+server/
+supabase/
+.git/
+.github/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
